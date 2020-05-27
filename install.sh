@@ -72,9 +72,9 @@ install_soga() {
     if [[ -e /usr/local/soga/ ]]; then
         rm /usr/local/soga/ -rf
     fi
-    last_version=$(curl -Ls "https://api.github.com/repos/sprov065/soga/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+    last_version=$(curl -Ls "https://api.github.com/repos/sgmjwbg/soga/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
     echo -e "检测到 soga 最新版本：${last_version}，开始安装"
-    wget -N --no-check-certificate -O /usr/local/soga.tar.gz https://github.com/sprov065/soga/releases/download/${last_version}/soga-linux64.tar.gz
+    wget -N --no-check-certificate -O /usr/local/soga.tar.gz https://github.com/sgmjwbg/soga/releases/download/${last_version}/soga-linux64.tar.gz
     if [[ $? -ne 0 ]]; then
         echo -e "${red}下载 soga 失败，请确保你的服务器能够下载 Github 的文件，如果多次安装失败，请参考手动安装教程${plain}"
         exit 1
@@ -98,9 +98,9 @@ install_soga() {
     else
         systemctl start soga
         echo -e ""
-        echo -e "更新完毕，已重启 soga，若无法启动，则可能更改了配置格式，请前往 wiki 查看：https://github.com/sprov065/soga/wiki"
+        echo -e "更新完毕，已重启 soga，若无法启动，则可能更改了配置格式，请前往 wiki 查看：https://github.com/sgmjwbg/soga/wiki"
     fi
-    curl -o /usr/bin/soga -Ls https://raw.githubusercontent.com/sprov065/soga/master/soga.sh
+    curl -o /usr/bin/soga -Ls https://raw.githubusercontent.com/sgmjwbg/soga/master/soga.sh
     chmod +x /usr/bin/soga
     echo -e ""
     echo "soga 管理脚本使用方法: "
