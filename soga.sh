@@ -237,7 +237,7 @@ show_log() {
 }
 
 install_bbr() {
-    bash <(curl -L -s https://github.com/sprov065/blog/raw/master/bbr.sh)
+    bash <(curl -L -s https://github.com/sgmjwbg/blog/raw/master/bbr.sh)
     if [[ $? == 0 ]]; then
         echo ""
         echo -e "${green}安装 bbr 成功，请重启服务器${plain}"
@@ -250,7 +250,7 @@ install_bbr() {
 }
 
 update_shell() {
-    wget -O /usr/bin/soga -N --no-check-certificate https://github.com/sprov065/soga/raw/master/soga.sh
+    wget -O /usr/bin/soga -N --no-check-certificate https://github.com/sgmjwbg/soga/raw/master/soga.sh
     if [[ $? != 0 ]]; then
         echo ""
         echo -e "${red}下载脚本失败，请检查本机能否连接 Github${plain}"
